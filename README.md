@@ -28,26 +28,26 @@ Usage
 ### Sample usage
 
 
-   % python wikirc2text.py "http://en.ekopedia.org/w/index.php?title=Special:RecentChanges&feed=atom" --state | head -4
-   Ekopedia  - Recent changes [en]
-   http://en.ekopedia.org/w/index.php?title=Ecological_rucksack&diff=8004&oldid=prev by Wibil @ Sun, 09 Jan 2011 08:09:03 +0000
-   http://en.ekopedia.org/w/index.php?title=User:Wibil/to_do_list&diff=8003&oldid=prev by Wibil @ Sun, 09 Jan 2011 06:31:28 +0000
-   http://en.ekopedia.org/User:Social_Networking by Social Networking @ Sat, 08 Jan 2011 20:19:42 +0000
+    % python wikirc2text.py "http://en.ekopedia.org/w/index.php?title=Special:RecentChanges&feed=atom" --state | head -4
+    Ekopedia  - Recent changes [en]
+    http://en.ekopedia.org/w/index.php?title=Ecological_rucksack&diff=8004&oldid=prev by Wibil @ Sun, 09 Jan 2011 08:09:03 +0000
+    http://en.ekopedia.org/w/index.php?title=User:Wibil/to_do_list&diff=8003&oldid=prev by Wibil @ Sun, 09 Jan 2011 06:31:28 +0000
+    http://en.ekopedia.org/User:Social_Networking by Social Networking @ Sat, 08 Jan 2011 20:19:42 +0000
 
 If you do a second request, just after. As there is no changes, there is no output.
 If you don't use the --state option, you'll get all the latest changes without checking
 the state cache.
 
-   % python wikirc2text.py "http://en.ekopedia.org/w/index.php?title=Special:RecentChanges&feed=atom" --state
+    % python wikirc2text.py "http://en.ekopedia.org/w/index.php?title=Special:RecentChanges&feed=atom" --state
 
 You can clear the state following an interval specified in seconds.
    
-   % python wikirc2text.py -c 60 
-   29 states deleted
+    % python wikirc2text.py -c 60
+    29 states deleted
 
 ### Usage with sendxmpp
 
-   % python wikirc2text.py --state "http://www.hackerspace.lu/w/index.php?title=Special:RecentChanges&feed=atom" | head -5 |sendxmpp -u yourbotname -p yourbotpassword -r yourbotressource -j an.xmpp.server -t -c aconference@conference.somewhere
+    % python wikirc2text.py --state "http://www.hackerspace.lu/w/index.php?title=Special:RecentChanges&feed=atom" | head -5 |sendxmpp -u yourbotname -p yourbotpassword -r yourbotressource -j an.xmpp.server -t -c aconference@conference.somewhere
 
 ### Software required
 
