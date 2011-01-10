@@ -24,7 +24,7 @@ Usage
           -c STATESEC, --cleanstate=STATESEC
                                 expire states existing more than number of seconds
                                 specified
-	  -t, --tail            tail-like operation by continuously appending new
+          -t, --tail            tail-like operation by continuously appending new
                                 changes (--state option is enable)
 
 ### Sample usage
