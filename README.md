@@ -24,6 +24,8 @@ Usage
           -c STATESEC, --cleanstate=STATESEC
                                 expire states existing more than number of seconds
                                 specified
+	  -t, --tail            tail-like operation by continuously appending new
+                                changes (--state option is enable)
 
 ### Sample usage
 
@@ -44,6 +46,10 @@ You can clear the state following an interval specified in seconds.
    
     % python wikirc2text.py -c 60
     29 states deleted
+
+You can also use the tail-like interface to have a continuous update of the new recent changes.
+
+    % python wikirc2text.py "http://en.ekopedia.org/w/index.php?title=Special:RecentChanges&feed=atom" --tail
 
 ### Usage with sendxmpp
 
