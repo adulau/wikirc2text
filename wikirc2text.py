@@ -32,6 +32,7 @@ parser = OptionParser(usage)
 parser.add_option("-s", "--state", action="store_true" ,dest="state", help="keep state of existing rcline seen and don't output them", default=False)
 parser.add_option("-c", "--cleanstate", dest="statesec", help="expire states existing more than number of seconds specified")
 parser.add_option("-t", "--tail", action="store_true", dest="tail", help="tail-like operation by continuously appending new changes (--state option is enable)", default=False)
+parser.add_option("-w", "--wait", dest="wait", help="number of seconds to wait before refreshing (default is 60)", default=60)
 (options, args) = parser.parse_args()
 
 if (options.tail):
@@ -73,7 +74,7 @@ def core ():
                 else:
                     print rcline
         if x > 1:
-            time.sleep(60)
+            time.sleep(float(options.wait))
 
     if (options.state):
         s.close()
