@@ -26,6 +26,8 @@ Usage
                                 specified
           -t, --tail            tail-like operation by continuously appending new
                                 changes (--state option is enable)
+          -w WAIT, --wait=WAIT  number of seconds to wait before refreshing (default
+                        is 60)
 
 ### Sample usage
 
