@@ -70,9 +70,9 @@ def core ():
                     shkey = sh.hexdigest()
                     if not (s.has_key(shkey)):
                         s[shkey] =  time.mktime(datetime.datetime.now().timetuple())
-                        print rcline
+                        print rcline.encode('utf-8')
                 else:
-                    print rcline
+                    print rcline.encode('utf-8')
         if x > 1:
             time.sleep(float(options.wait))
 
