@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 #
 #    wikirc2text - dump MediaWiki RecentChanges into text line while keeping
-#                  the state of the already seen lines. 
-# 
+#                  the state of the already seen lines.
+#
 #    Copyright (C) 2011 Alexandre Dulaunoy (a AT foo.be)
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -75,6 +75,8 @@ def core ():
                     print rcline.encode('utf-8')
         if x > 1:
             time.sleep(float(options.wait))
+            if options.statesec is not None:
+                expirecache(options.statesec)
 
     if (options.state):
         s.close()
@@ -91,10 +93,7 @@ def expirecache (seconds):
             sdeleted=sdeleted+1
 
     s.close()
-    print "%s states deleted" % str(sdeleted)
+    log = "%s states deleted" % str(sdeleted)
+    sys.stderr.write(log)
 
-if not options.statesec:
-    core()
-else:
-    expirecache(options.statesec)
-
+core()
